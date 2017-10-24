@@ -47,7 +47,7 @@
 # end
 
 
-month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
 
 def valid_date()
   puts "Enter a month"
@@ -61,38 +61,41 @@ end
 
 def isValid(month, date, year)
   if month.between?(1,12)
+    puts "this is working"
     if month == 2 && year % 4
       puts "true" if date.between?(1,29)
     elsif month == 2 && date.between?(1,28)
       puts "true"
     end
 
+    monthArr = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    valid = "false"
     case month
     when 1
-      puts "true" if date.between?(1, month[1])
+      valid = "true" if date.between?(1, monthArr[1])
     when 3
-      puts "true" if date.between?(1, month[3])
+      valid = "true" if date.between?(1, monthArr[3])
     when 4
-      puts "true" if date.between?(1, month[4])
+      valid = "true" if date.between?(1, monthArr[4])
     when 5
-      puts "true" if date.between?(1, month[5])
+      valid = "true" if date.between?(1, monthArr[5])
     when 6
-      puts "true" if date.between?(1, month[6])
+      valid = "true" if date.between?(1, monthArr[6])
     when 7
-      puts "true" if date.between?(1, month[7])
+      valid = "true" if date.between?(1, monthArr[7])
     when 8
-      puts "true" if date.between?(1, month[8])
+      valid = "true" if date.between?(1, monthArr[8])
     when 9
-      puts "true" if date.between?(1, month[9])
+      valid = "true" if date.between?(1, monthArr[9])
     when 10
-      puts "true" if date.between?(1, month[10])
+      valid = "true" if date.between?(1, monthArr[10])
     when 11
-      puts "true" if date.between?(1, month[11])
+      valid = "true" if date.between?(1, monthArr[11])
     when 12
-      puts "true" if date.between?(1, month[12])
+      valid = "true" if date.between?(1, monthArr[12])
     end
   end
-  puts "false"
+  valid == "true" ? (puts "true") : (puts "false")
 end
 
 
