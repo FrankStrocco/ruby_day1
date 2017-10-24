@@ -60,16 +60,16 @@ def valid_date()
 end
 
 def isValid(month, date, year)
-  if month.between?(1,12)
-    puts "this is working"
-    if month == 2 && year % 4
-      puts "true" if date.between?(1,29)
+  valid = "false"
+  if month.between?(1,12) && year < 2017 && year > 0
+    if month == 2 && year % 4 == 0
+      valid = "true" if date.between?(1,29)
     elsif month == 2 && date.between?(1,28)
-      puts "true"
+      valid = "true"
     end
 
     monthArr = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    valid = "false"
+
     case month
     when 1
       valid = "true" if date.between?(1, monthArr[1])
